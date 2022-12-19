@@ -108,10 +108,10 @@ DATABASES = {
     }
 }
 
-DATABASES_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-if DATABASES_URL:
-    db_deploy = dj_database_url.config(default=DATABASES_URL)
+if DATABASE_URL:
+    db_deploy = dj_database_url.config(default=DATABASE_URL)
     DATABASES["default"].update(db_deploy)
     DEBUG = False
 
@@ -140,16 +140,16 @@ SIMPLE_JWT = {
 }
 
 REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
 }
 
 
-
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Titulo exemplo",
-    "DESCRIPTION": "Descrição exemplo"
+    'TITLE': 'Band Kamp',
+    'DESCRIPTION': 'Description exemple',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 # Internationalization
