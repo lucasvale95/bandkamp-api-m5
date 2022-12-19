@@ -7,3 +7,4 @@ urlpatterns = [
     path("albums/", views.AlbumView.as_view()),
     path("albums/<int:pk>/songs/", song_views.SongView.as_view()),
 ]
+
